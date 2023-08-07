@@ -1,4 +1,5 @@
 from django.shortcuts import render
-
+from .models import Proyecto
 def home(request):
-    return render(request,"apps/templates/profolio/home.html") 
+    proyectos = Proyecto.objects.all()
+    return render(request,"profolio/home.html",{"proyectos": proyectos})
