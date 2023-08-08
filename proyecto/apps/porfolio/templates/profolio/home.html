@@ -1,3 +1,7 @@
 <h1>home</h1>
-h2
-<h1> {{proyectos}} </h1>
+
+{% for proyecto in proyectos  %}
+   <h2> {{proyecto.titulo}}</h2>
+   <img src="{{proyecto.img.url}}" alt="{{proyecto.titulo}}">
+   <a href="proyecto.url"> {{proyecto.url}} </a>
+{% endfor %}

@@ -18,7 +18,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 APPS_DIR = BASE_DIR / "apps"
 sys.path.append(str(BASE_DIR/'apps'))
-sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'porfolio',
-    'apps.porfolio.models.Proyecto'
+    
 ]
 
 MIDDLEWARE = [
