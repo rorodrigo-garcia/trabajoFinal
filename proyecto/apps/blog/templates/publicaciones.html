@@ -1,12 +1,26 @@
 {% extends 'profolio/layout.html' %}
 {% block content %}
 <h1> publicaciones </h1>
-
 {% for publicacion in publicaciones %}
-<h2> {{publicacion.titulo}} </h2>
-<h3> {{publicacion.año|date:'M d Y'|upper}} </h3>
-<h4> {{publicacion.descripcion |truncatechars:100}} </h4>
+<div class="p-3">
 
-<a href="{%  url 'blog:publicaciones_detail' publicacion.id%}">{{publicacion.titulo}}</a>
+
+    <div class="card card-body bg-black">
+        <div class="row">
+            <div class="col-3">
+                <img src="{{publicacion.image}}" alt="{{publicacion.titulo}}" class="img-fluid">
+    
+            </div>
+            <div class="col-9">
+    
+                <h2> {{publicacion.titulo}} </h2>
+                <h3> {{publicacion.año|date:'M d Y'|upper}} </h3>
+                <h4> {{publicacion.descripcion |truncatechars:100}} </h4>
+                
+                <a href="{%  url 'blog:publicaciones_detail' publicacion.id%}" class="btn btn-primary">{{publicacion.titulo}}</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endfor %}
 {% endblock content %}

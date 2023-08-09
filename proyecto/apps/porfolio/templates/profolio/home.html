@@ -1,12 +1,36 @@
 {% extends 'profolio/layout.html' %}
 
 {% block content %}
-<h1>home</h1>
+{% load static %}
 
-{% for proyecto in proyectos  %}
-   <h2> {{proyecto.titulo}}</h2>
-   <img src="{{proyecto.img.url}}" alt="{{proyecto.titulo}}">
-   <a href="proyecto.url"> {{proyecto.url}} </a>
+<header class="row bg-black" >
+   <div class="col-md-4">
+      <img src="{% static 'porfolio/foto.jpg'%}" alt="" class="img-fluid">
+   </div>
+   <div class="col-md-8 my-auto">
+      <h1> Me llamo <strong>Rodrigo Garcia</strong> </h1>
+      <h3> Soy un desarrollador Full Stack de Python </h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur deserunt temporibus illum, doloremque in explicabo?</p>
+      <a href="{% static 'porfolio/Cv_Rodri.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Descargar Cv</a>
+   </div>
+
+</header>
+
+<div class="row my-4 text-center">
+   <h3>Mis proyectos</h3>
+   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, fuga?  </p>
+   {% for proyecto in proyectos  %}
+   <div class="col-md-4 p-4" >
+      <div class="card bg-black card-proyecto">
+         <div class="card-body">
+            <h2> {{proyecto.titulo}}</h2>
+            <img src="{{proyecto.img.url}}" alt="{{proyecto.titulo}}" class="img-fluid">
+            <a href="proyecto.url" class="btn btn-light rounded-0 btn-sm" target="_blank"> {{proyecto.url}} </a>
+         </div>
+      </div>
+   </div>
+ 
 {% endfor %}
 
 {% endblock content %}
+</div>

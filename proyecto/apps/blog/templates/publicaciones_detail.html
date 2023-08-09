@@ -1,7 +1,16 @@
-<h1>post</h1>
+{% extends 'profolio/layout.html' %}
+{% block content %}
 
-{% for publicacion in publicaciones %}
-<h2> {{publicacion.titulo}} </h2>
-<h3> {{publicacion.año}} </h3>
-<p> {{publicacion.descripcion|safe}} </p>
-{% endfor %}
+<div class="text-center">
+    {% for publicacion in publicaciones %}
+    <img src="{{publicacion.image.url}}" alt="publicacion.titulo" class="img-fluid">
+    <h2> {{publicacion.titulo}} </h2>
+    <h3 class="my-2 h5 text-muted" > {{publicacion.año|date:'F jS Y'}} </h3>
+    
+    <div class="my-4">
+        <p> {{publicacion.descripcion|safe}} </p>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
