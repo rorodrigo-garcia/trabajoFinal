@@ -4,5 +4,5 @@
 <h2> {{publicacion.titulo}} </h2>
 <h3> {{publicacion.año}} </h3>
 <h4> {{publicacion.descripcion |truncatechars:100}} </h4>
-<a href="{% url 'blog:publicaciones_detail', publicaciones_id %}">{{publicacion.titulo}}</a>
+<a href="{%  url 'blog:publicaciones_detail' publicacion.id%}">{{publicacion.titulo}}</a>
 {% endfor %}
