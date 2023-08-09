@@ -3,4 +3,5 @@
 {% for publicacion in publicaciones %}
 <h2> {{publicacion.titulo}} </h2>
 <h3> {{publicacion.año}} </h3>
+<p> {{publicacion.descripcion|safe}} </p>
 {% endfor %}
